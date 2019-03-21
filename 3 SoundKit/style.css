@@ -13,9 +13,11 @@ body {
 }
 
 .content {
-    width: 800px;
-    margin: calc((100vw - 800px)/2);
-    margin-top: calc((100vh - 90px)/2);
+    width: 100vw;
+    margin: 50vh -50vw auto;
+    left: 50%;
+    right: 50%;
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -24,6 +26,8 @@ body {
 .channel,
 .key,
 .soundNames {
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
     flex: 1;
     align-items: center;
@@ -43,7 +47,6 @@ body {
 .buttons button,
 .key {
     margin: 10px;
-    transition: all .07s ease;
     color: white;
 }
 
@@ -60,6 +63,7 @@ body {
     background: rgba(0, 0, 0, 0.4);
     border: 2px solid black;
     border-radius: 6px;
+    transition: all .07s ease;
 }
 
 kbd,
