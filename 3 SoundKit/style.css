@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url('images/bg_drums.jpg') no-repeat center center fixed;
+    background-size: cover;
+    max-height: 100vh;
+    font-family: Georgia, sans-serif;
+    font-size: 40px;
+}
+
+.content {
+    width: 800px;
+    margin: calc((100vw - 800px)/2);
+    margin-top: calc((100vh - 90px)/2);
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons,
+.channel,
+.key,
+.soundNames {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center; 
+}
+
+.buttons button {
+    height: 80px;
+    width: 80px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 4px solid #ffc600;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.buttons button,
+.key {
+    margin: 10px;
+    transition: all .07s ease;
+    color: white;
+}
+
+#rec {
+    background: rgba(255, 0, 0, 0.7);
+}
+
+#play {
+    background: rgba(0, 124, 0, 0.7);
+}
+
+.key {
+    height: 60px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+kbd,
+.soundNames div {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.playing {
+    border-color: #ffc600;
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+.soundNames {
+    justify-content: space-around;
+}
+
+.soundNames div {
+    width: 70px;
+    margin: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ffc600;
+}

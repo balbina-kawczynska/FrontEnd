@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Edytor graficzny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="content">
+        <!--create buttons for canvas-->
+        <div class="buttons">
+            <!--open new image-->
+            <input id="buttonOpenFile" type="file"></input>
+            <label for="buttonOpenFile" class="text" id="labelOpenFile">Open</label>
+
+            <!--resetFilters-->
+            <button id="buttonResetFilters"></button>
+            <label for="buttonResetFilters" class="text" id="labelResetFilters">Reset</label>
+        </div>
+
+        <!--create new canvas-->
+        <canvas id="myCanvas" width="800" height="600"></canvas>
+
+        <!--create filters for canvas-->
+        <div id="filters">
+            <div class="filter">
+                <div class="filterName text">
+                    <p>Brightness</p>
+                </div>
+
+                <div class="filterSetting">
+                    <input onchange="applyFilter(this.value, this.id)"
+                        type="range" 
+                        min="0" 
+                        max="200" 
+                        step="1" 
+                        value="100" 
+                        data-filter="brightness"
+                        class="slider"
+                        id="brightness">
+                </div>
+
+                <span class="filterValue text" id="brightnessValue">
+                    0
+                </span>
+            </div>
+
+            <div class="filter">
+                <div class="filterName text">
+                    <p>Contrast</p>
+                </div>
+
+                <div class="filterSetting">
+                    <input onchange="applyFilter(this.value, this.id)"
+                        type="range" 
+                        min="0" 
+                        max="200" 
+                        step="1" 
+                        value="100" 
+                        data-filter="contrast"
+                        class="slider"
+                        id="contrast">
+                </div>
+
+                <span class="filterValue text" id="contrastValue">
+                    0
+                </span>
+            </div>
+
+            <div class="filter">
+                <div class="filterName text">
+                    <p>Saturation</p>
+                </div>
+
+                <div class="filterSetting">
+                    <input onchange="applyFilter(this.value, this.id)"
+                        type="range" 
+                        min="0" 
+                        max="200" 
+                        step="1" 
+                        value="100" 
+                        data-filter="saturation"
+                        class="slider"
+                        id="saturate">
+                </div>
+
+                <span class="filterValue text" id="saturateValue">
+                    0
+                </span>
+            </div>
+
+            <div class="filter">
+                <div class="filterName text">
+                    <p>Sepia</p>
+                </div>
+
+                <div class="filterSetting">
+                    <input onchange="applyFilter(this.value, this.id)"
+                        type="range" 
+                        min="0" 
+                        max="100" 
+                        step="1" 
+                        value="0" 
+                        data-filter="sepia"
+                        class="slider"
+                        id="sepia">
+                </div>
+
+                <span class="filterValue text" id="sepiaValue">
+                    0
+                </span>
+            </div>
+
+            <div class="filter">
+                <div class="filterName text">
+                    <p>Blur</p>
+                </div>
+
+                <div class="filterSetting">
+                    <input onchange="applyFilter(this.value, this.id)"
+                        type="range" 
+                        min="0" 
+                        max="10" 
+                        step="1" 
+                        value="0" 
+                        data-filter="blur"
+                        class="slider"
+                        id="blur">
+                </div>
+
+                <span class="filterValue text" id="blurValue">
+                    0
+                </span>
+            </div>
+
+            <div class="filter">
+                <div class="filterName text">
+                    <p>Shadow</p>
+                </div>
+
+                <div class="filterSetting">
+                    <input onchange="applyFilter(this.value, this.id)"
+                        type="range" 
+                        min="-20" 
+                        max="20" 
+                        step="1" 
+                        value="0" 
+                        data-filter="drop-shadow"
+                        class="slider"
+                        id="shadow">
+                </div>
+
+                <span class="filterValue text" id="shadowValue">
+                    0
+                </span>
+            </div>
+
+            <div class="filter">
+                    <div class="filterName text">
+                        <p>Grayscale</p>
+                    </div>
+    
+                    <div class="filterSetting">
+                        <input onchange="applyFilter(this.value, this.id)"
+                            type="range" 
+                            min="0" 
+                            max="100" 
+                            step="1" 
+                            value="0" 
+                            data-filter="grayscale"
+                            class="slider"
+                            id="grayscale">
+                    </div>
+    
+                    <span class="filterValue text" id="grayscaleValue">
+                        0
+                    </span>
+            </div>
+
+            <div class="filter">
+                    <div class="filterName text">
+                        <p>Hue rotate</p>
+                    </div>
+    
+                    <div class="filterSetting">
+                        <input onchange="applyFilter(this.value, this.id)"
+                            type="range" 
+                            min="0" 
+                            max="360" 
+                            step="1" 
+                            value="0" 
+                            data-filter="hue-rotate"
+                            class="slider"
+                            id="hueRotate">
+                    </div>
+    
+                    <span class="filterValue text" id="hueRotateValue">
+                        0
+                    </span>
+            </div>
+
+            <div class="filter">
+                    <div class="filterName text">
+                        <p>invert</p>
+                    </div>
+    
+                    <div class="filterSetting">
+                        <input onchange="applyFilter(this.value, this.id)"
+                            type="range" 
+                            min="0" 
+                            max="100" 
+                            step="1" 
+                            value="0" 
+                            data-filter="invert"
+                            class="slider"
+                            id="invert">
+                    </div>
+    
+                    <span class="filterValue text" id="invertValue">
+                        0
+                    </span>
+            </div>
+
+            <div class="filter">
+                    <div class="filterName text">
+                        <p>opacity</p>
+                    </div>
+    
+                    <div class="filterSetting">
+                        <input onchange="applyFilter(this.value, this.id)"
+                            type="range" 
+                            min="0" 
+                            max="200" 
+                            step="1" 
+                            value="100" 
+                            data-filter="opacity"
+                            class="slider"
+                            id="opacity">
+                    </div>
+    
+                    <span class="filterValue text" id="opacityValue">
+                        0
+                    </span>
+            </div>
+    </div>
+    <!--load jquery script-->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"></script> -->
+    <script src="editor.js"></script>
+</body>
+</html>
