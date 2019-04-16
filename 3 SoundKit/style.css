@@ -38,7 +38,7 @@ body {
     height: 80px;
     width: 80px;
     background: rgba(0, 0, 0, 0.4);
-    border: 4px solid #ffc600;
+    border: 4px solid rgb(255, 198, 0);
     border-radius: 10px;
     font-size: 25px;
     font-weight: bold;
@@ -47,7 +47,7 @@ body {
 .buttons button,
 .key {
     margin: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 #rec {
@@ -61,7 +61,7 @@ body {
 .key {
     height: 60px;
     background: rgba(0, 0, 0, 0.4);
-    border: 2px solid black;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 6px;
     transition: all .07s ease;
 }
@@ -73,7 +73,7 @@ kbd,
 }
 
 .playing {
-    border-color: #ffc600;
+    border-color: rgb(255, 198, 0);
     font-weight: bold;
     transform: scale(1.2);
 }
@@ -86,9 +86,9 @@ kbd,
     width: 70px;
     margin: 10px;
     background: rgba(0, 0, 0, 0.8);
-    border: 2px solid black;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 6px;
     font-size: 12px;
     text-transform: uppercase;
-    color: #ffc600;
+    color: rgb(255, 198, 0);
 }

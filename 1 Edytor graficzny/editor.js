@@ -1,17 +1,19 @@
 'use strict';
 
+window.addEventListener('DOMContentLoaded', init);
+
 //initialize drawing on canvas and opening an image
-window.onload = () => {
+function init() {
     drawImage();
     filePath.addEventListener('change', openFile);
-};
+}
 
 //get reference to the canvas object
-const canvas = document.getElementById('myCanvas'),
-    ctx = canvas.getContext('2d');
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
 
 //create new html image element
-let img = new Image();
+var img = new Image();
 
 //open new image
 var filePath = document.getElementById('buttonOpenFile');
@@ -41,8 +43,8 @@ function drawImage() {
 //apply filter to an image
 function applyFilter() {
     //get current input values
-    var currentInputValue = Number(arguments[0]);
-    var currentFilterName = String(arguments[1]);
+    let currentInputValue = Number(arguments[0]);
+    let currentFilterName = String(arguments[1]);
 
     //get values of different filters
     //=============================================================
@@ -55,16 +57,16 @@ function applyFilter() {
     //=============================================================
     //working long version
     //=============================================================
-    var brightnessValue = Number(document.getElementById('brightness').value),
-        contrastValue = Number(document.getElementById('contrast').value),
-        saturationValue = Number(document.getElementById('saturate').value),
-        sepiaValue = Number(document.getElementById('sepia').value),
-        blurValue = Number(document.getElementById('blur').value),
-        shadowValue = Number(document.getElementById('shadow').value),
-        grayscaleValue = Number(document.getElementById('grayscale').value),
-        hueRotateValue = Number(document.getElementById('hueRotate').value),
-        invertValue = Number(document.getElementById('invert').value),
-        opacityValue = Number(document.getElementById('opacity').value);
+    let brightnessValue = Number(document.getElementById('brightness').value);
+    let contrastValue = Number(document.getElementById('contrast').value);
+    let saturationValue = Number(document.getElementById('saturate').value);
+    let sepiaValue = Number(document.getElementById('sepia').value);
+    let blurValue = Number(document.getElementById('blur').value);
+    let shadowValue = Number(document.getElementById('shadow').value);
+    let grayscaleValue = Number(document.getElementById('grayscale').value);
+    let hueRotateValue = Number(document.getElementById('hueRotate').value);
+    let invertValue = Number(document.getElementById('invert').value);
+    let opacityValue = Number(document.getElementById('opacity').value);
 
     //apply filters and refresh to get filtered image 
     ctx.filter = `brightness(${brightnessValue}%)\n` +
