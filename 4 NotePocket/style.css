@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url('images/bg_note.jpg') no-repeat center center fixed;
+    background-size: cover;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, sans-serif;
+    font-size: 25px;
+}
+
+.content {
+    max-height: 60vh;
+    width: 80vw;
+    margin: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+ul,
+.note {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.note {
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 300px;
+    margin: 10px;
+    background: rgba(154, 205, 50, 0.8);
+    flex-direction: column;
+    font-family: Georgia, sans-serif;
+}
+
+.addNote,
+.noteBar,
+.pinNote,
+.deleteNote,
+.noteDate,
+.saveNote,
+.noteContent {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.noteBar,
+.noteDate,
+.noteContent {
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.noteBar {
+    min-height: 40px;
+    height: auto;
+    margin: 0;
+    background: rgb(218, 165, 32);
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.addNote,
+.pinNote,
+.deleteNote,
+.saveNote {
+    height: 30px;
+    width: 35px;
+    background: rgb(113, 161, 15);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.addNote {
+    height: 30px;
+    width: 50px;
+    background: rgb(218, 165, 32);
+    color: rgb(0, 0, 0);
+}
+
+.deleteNote {
+    background: rgb(220, 20, 60);
+    font-size: x-large;
+}
+
+input,
+textarea {
+    background: none;
+    border: 1px solid transparent;
+}
+
+textarea.noteContent,
+textarea.noteTitle {
+    max-width: max-content;
+}
+
+.noteTitle {
+    margin: 10px 0;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+.noteDate {
+    height: 15px;
+    margin: 0;
+    margin-top: 5px;
+    font: bold 10px sans-serif;
+}
+
+.noteDate::after {
+    content: " ";
+    height: 2px;
+    width: 120px;
+    background-color: rgb(220, 20, 60);
+}
+
+.noteContent {
+    min-height: 180px;
+    align-items: flex-start;
+    font-size: 16px;
+}
+
+.saveNote {
+    background-color: rgb(218, 165, 32);
+}

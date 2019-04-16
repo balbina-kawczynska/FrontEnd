@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>NotePocket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="newNoteRow">
+            <button class="addNote" type=”button”>New</button>
+        </div>
+
+        <div class="pinnedNotes">
+            <ul id="pinnedNotesList">
+                <li id="note0">
+                    <div class="note pinned" id="default">
+                        <div class="noteBar">            
+                            <button class="pinNote" type=”button”>&#128204</button>
+                            <textarea class="noteTitle" type="text" name="default" placeholder="Title"></textarea>
+                            <!-- <button class="deleteNote" type=”button”>&#128465</button> -->
+                        </div>
+                        <div class="noteDate">2/22/2019, 10:24:21 AM</div>
+                        <textarea class="noteContent" type="text" name="default" placeholder="Content" required></textarea>
+                        <button class="saveNote" type=”button”>&#128190</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="notes">   
+            <ul id="notesList"></ul>
+        </div> 
+    </div>
+
+    <script src="notePocket.js"></script>
+</body>
+</html>

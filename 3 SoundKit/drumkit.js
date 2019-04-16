@@ -1,4 +1,5 @@
 'use strict';
+
 document.addEventListener('DOMContentLoaded', appStart);
 
 const sounds = {
@@ -44,39 +45,41 @@ const sounds = {
     46: 'tom'
 };
 
-let channel1 = [],
-    channel2 = [],
-    channel3 = [],
-    channel4 = [],
-    isRecording = false,
-    recStart = null;
+var channel1 = [];
+var channel2 = [];
+var channel3 = [];
+var channel4 = [];
 
-let channels = [ 
-    channel1,
-    channel2,
-    channel3,
-    channel4
+var channels = [ 
+        channel1,
+        channel2,
+        channel3,
+        channel4
 ];
+
+var isRecording = false;
+var recStart = null;
 
 function appStart() {
     // play one key sound
     window.addEventListener('keypress', playSound);
 
+    function recordMusic(e) { 
+        isRecording = !isRecording;
+        recStart = Date.now();
+        e.target.innerHTML = isRecording ? 'Stop' : 'Rec';
+    }
+
     // start recording, set time, change name on button
-    document.querySelector('#rec').addEventListener('click',
-        (e) => { 
-            isRecording = !isRecording;
-            recStart = Date.now();
-            e.target.innerHTML = isRecording ? 'Stop' : 'Rec';
-        });
+    document.querySelector('#rec').addEventListener('click', recordMusic);
 
     // play recorded music
     document.querySelector('#play').addEventListener('click', playMusic);
 
 
     // search all key tags for added 'playing' class
-    const targetKey = document.querySelectorAll('.key'),
-        keys = Array.from(targetKey);
+    const targetKey = document.querySelectorAll('.key');
+    const keys = Array.from(targetKey);
     keys.forEach(
         key => key.addEventListener('transitionend', removeTransition)
     );
