@@ -3,7 +3,7 @@
   ⦁	Add filters to the image  
   
 ## **Ball in a hole**  
-  ⦁  
+
   
 ## **SoundKit**  
   ⦁	Drum keyboard  
@@ -11,5 +11,5 @@
   ⦁	Record and play composed music  
   
 ## **Note Pocket**  
-  ⦁  
+ 
   
